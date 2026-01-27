@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jadwal KBM</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="center">
+  <div class="card">
+
+    <h2>📚 Jadwal KBM</h2>
+
+    <div class="form-row">
+      <input type="text" id="hari" placeholder="Hari">
+      <input type="text" id="pengajar" placeholder="Pengajar">
+    </div>
+
+    <div class="form-row">
+      <input type="text" id="kelompok" placeholder="Kelompok">
+      <input type="text" id="materi" placeholder="Materi">
+    </div>
+
+    <div class="form-row">
+      <button class="btn btn-kbm" onclick="tambahKBM()">➕ Tambah</button>
+      <button class="btn btn-back" onclick="window.location.href='menu-jadwal.html'">⬅ Kembali</button>
+    </div>
+
+    <table border="1" width="100%" style="margin-top:15px">
+      <thead>
+        <tr>
+          <th>Hari</th>
+          <th>Pengajar</th>
+          <th>Kelompok</th>
+          <th>Materi</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tabelKBM">
+        <tr>
+          <td colspan="5" align="center">Belum ada data</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<script src="js/jadwal-kbm.js"></script>
+</body>
+</htm

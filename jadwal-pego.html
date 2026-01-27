@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jadwal Pego</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="center">
+  <div class="card">
+
+  <h2>📘 Jadwal Pego</h2>
+
+  <div class="form-row">
+    <input type="text" id="hari" placeholder="Hari">
+    <input type="text" id="kelompok" placeholder="Kelompok">
+  </div>
+
+  <div class="form-row">
+    <input type="text" id="pengajar" placeholder="Pengajar">
+    <input type="text" id="badal" placeholder="Badal">
+  </div>
+
+  <div class="form-row">
+    <button onclick="tambahPego()">➕ Tambah</button>
+    <button onclick="window.location.href='menu-jadwal.html'">⬅ Kembali</button>
+  </div>
+
+  <table border="1" width="100%" style="margin-top:15px">
+    <thead>
+      <tr>
+        <th>Hari</th>
+        <th>Kelompok</th>
+        <th>Pengajar</th>
+        <th>Badal</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="tabelPego">
+      <tr>
+        <td colspan="5" align="center">Belum ada data</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+<script src="js/jadwal-pego.js"></script>
+</body>
+</html>

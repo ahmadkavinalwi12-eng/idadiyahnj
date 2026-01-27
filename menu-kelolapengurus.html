@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kelola Pengurus</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="card">
+  <h2>Kelola Pengurus Asrama</h2>
+
+  <input type="text" id="nama" placeholder="Nama Pengurus">
+  <input type="text" id="jabatan" placeholder="Jabatan">
+  <input type="text" id="nim" placeholder="NIM">
+
+  <button onclick="tambahPengurus()">➕ Tambah</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Jabatan</th>
+        <th>NIM</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="dataPengurus"></tbody>
+  </table>
+
+  <button class="btn btn-back" onclick="location.href='kepala.html'">
+      ⬅ Kembali
+    </button>
+</div>
+
+<script src="js/kelola-pengurus.js"></script>
+
+</body>
+</html>

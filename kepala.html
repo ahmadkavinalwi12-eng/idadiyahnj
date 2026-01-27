@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Kepala</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center">
+<div class="card">
+  <h2>Dashboard Kepala</h2>
+  <p>Hak akses penuh</p>
+
+  <div class="menu">
+    <button class="btn btn-absen"
+  onclick="window.location.href='menu-absen.html'">
+  📊 Absen Pengurus
+</button>
+
+    <button class="btn btn-pengurus" onclick="window.location.href='menu-kelolapengurus.html'">
+  👥 Kelola Pengurus
+    </button>
+
+
+    <button class="btn btn-jadwal"
+      onclick="location.href='menu-jadwal.html'">
+      📅 Kelola Jadwal
+    </button>
+
+    <button class="btn btn-logout"
+      onclick="logout()">
+      🚪 Logout
+    </button>
+  </div>
+</div>
+</div>
+
+<script src="js/kepala.js"></script>
+</body>
+</html>

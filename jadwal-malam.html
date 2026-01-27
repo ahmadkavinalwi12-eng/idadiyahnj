@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pembinaan Malam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="center">
+  <div class="card">
+
+  <h2>🌙 Pembinaan Malam</h2>
+
+  <div class="form-row">
+    <input type="text" id="pengurus" placeholder="Pengurus">
+    <input type="text" id="kelompok" placeholder="Kelompok">
+  </div>
+
+  <div class="form-row">
+    <button onclick="tambahMalam()">➕ Tambah</button>
+    <button onclick="window.location.href='menu-jadwal.html'">⬅ Kembali</button>
+  </div>
+
+  <table border="1" width="100%" style="margin-top:15px">
+    <thead>
+      <tr>
+        <th>Pengurus</th>
+        <th>Kelompok</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="tabelMalam">
+      <tr>
+        <td colspan="3" align="center">Belum ada data</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+<script src="js/jadwal-malam.js"></script>
+</body>
+</html>

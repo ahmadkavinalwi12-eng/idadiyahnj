@@ -1,0 +1,329 @@
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* =========================
+   CENTER WRAPPER
+========================= */
+.center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   LOGIN
+========================= */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.login-box input,
+.login-box select,
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  background: #667eea;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #5a67d8;
+}
+
+/* =========================
+   CARD (SEMUA HALAMAN)
+========================= */
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  width: 600px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  animation: fadeUp 0.6s ease;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 8px;
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+  margin-top: 20px;
+}
+
+.menu button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* =========================
+   MENU JADWAL
+========================= */
+.menu-btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 25px auto;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   BUTTON COLOR VARIANT
+========================= */
+.btn-absen   { background:#e0f2fe; color:#0369a1; }
+.btn-pengurus{ background:#dcfce7; color:#166534; }
+.btn-jadwal  { background:#ede9fe; color:#5b21b6; }
+.btn-logout  { background:#ef4444; color:white; }
+
+.btn-pagi  { background:#fef3c7; color:#92400e; }
+.btn-malam { background:#e0e7ff; color:#1e3a8a; }
+.btn-pego  { background:#dcfce7; color:#166534; }
+.btn-kbm   { background:#ede9fe; color:#5b21b6; }
+.btn-back  { background:#e5e7eb; color:#374151; }
+
+.btn-danger { background:#ef4444; color:white; }
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(15px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card utama */
+.container {
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Tombol logout */
+.logout {
+  float: right;
+  margin-bottom: 15px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.logout:hover {
+  opacity: 0.9;
+}
+
+/* Form input */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  background: #6366f1;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  opacity: 0.9;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f3f4f6;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+/* Tombol aksi */
+.action-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit {
+  background: #22c55e;
+  color: white;
+}
+
+.delete {
+  background: #ef4444;
+  color: white;
+}
+/* =========================
+   PAGE WRAPPER
+========================= */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* =========================
+   GLOBAL
+========================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   JUDUL
+========================= */
+.judul-hijau {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #166534;
+}
+.btn-danger {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
