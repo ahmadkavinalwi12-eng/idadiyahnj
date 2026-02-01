@@ -1,0 +1,107 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* =========================
+   CENTER LAYOUT
+========================= */
+.center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   CARD DASHBOARD
+========================= */
+.card {
+  background: white;
+  padding: 35px 40px;
+  width: 420px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  animation: fadeUp 0.5s ease;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* =========================
+   MENU BUTTONS
+========================= */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* tombol umum */
+.btn {
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* hover efek */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   WARNA TOMBOL
+========================= */
+.btn-absen {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.btn-pengurus {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn-jadwal {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.btn-logout {
+  background: #ef4444;
+  color: white;
+}
+
+/* =========================
+   ANIMASI
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

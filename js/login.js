@@ -1,19 +1,25 @@
 function login() {
-  const role = document.getElementById("role").value;
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  if (role === "pengurus" && pass === "123") {
-    localStorage.setItem("role", "pengurus");
-    localStorage.setItem("username", user); // SIMPAN NAMA LOGIN
-    window.location.href = "pengurus.html";
+  // validasi kosong
+  if (username === "" || password === "") {
+    alert("Username dan Password wajib diisi!");
+    return;
   }
-  else if (role === "kepala" && user === "kepala" && pass === "123") {
-    localStorage.setItem("role", "kepala");
-    localStorage.setItem("username", user);
+
+  // LOGIN KEPALA
+  if (username === "kepala" && password === "123") {
     window.location.href = "kepala.html";
+    return;
   }
-  else {
-    alert("Login gagal!");
+
+  // LOGIN PENGURUS
+  if (username === "pengurus" && password === "123") {
+    window.location.href = "pengurus.html";
+    return;
   }
+
+  // JIKA SALAH
+  alert("Username atau Password salah!");
 }

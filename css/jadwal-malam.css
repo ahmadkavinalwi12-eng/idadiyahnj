@@ -1,0 +1,140 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* BACKGROUND FULL LAYAR */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD UTAMA */
+.card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 700px;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease;
+}
+
+/* ANIMASI MASUK */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* JUDUL */
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+/* FORM INPUT */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus {
+  border-color: #667eea;
+}
+
+/* TOMBOL */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-tambah {
+  background: #667eea;
+  color: white;
+}
+
+.btn-tambah:hover {
+  background: #5567d9;
+}
+
+.btn-kembali {
+  background: #e0e0e0;
+}
+
+.btn-kembali:hover {
+  background: #cfcfcf;
+}
+
+/* TABEL */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background: #667eea;
+  color: white;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f6f7ff;
+}
+
+/* TOMBOL HAPUS */
+.btn-hapus {
+  background: #ff5c5c;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.btn-hapus:hover {
+  background: #e04848;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+  .form-group {
+    grid-template-columns: 1fr;
+  }
+}
