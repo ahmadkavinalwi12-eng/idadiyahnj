@@ -1,107 +1,328 @@
 /* =========================
-   RESET & GLOBAL
+   ENHANCEMENT - VISUAL ENRICHMENT
 ========================= */
-* {
-  box-sizing: border-box;
-}
 
+/* Background dengan efek cahaya dinamis */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  min-height: 100vh;
-  margin: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* =========================
-   CENTER LAYOUT
-========================= */
-.center {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+  animation: floatBackground 20s linear infinite alternate;
+  z-index: -1;
 }
 
-/* =========================
-   CARD DASHBOARD
-========================= */
+@keyframes floatBackground {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-5%, -5%); }
+}
+
+/* Card dengan efek glassmorphism dan border glow */
 .card {
-  background: white;
-  padding: 35px 40px;
-  width: 420px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  animation: fadeUp 0.5s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+  border-radius: 17px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 0.3;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Typography enhancement */
 .card h2 {
-  margin-top: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
 .card p {
-  margin-bottom: 25px;
-  color: #555;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  position: relative;
+  padding: 0 20px;
 }
 
-/* =========================
-   MENU BUTTONS
-========================= */
+.card p::before {
+  content: '⭐';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card p::after {
+  content: '⭐';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Button enhancements */
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  position: relative;
 }
 
-/* tombol umum */
 .btn {
-  padding: 14px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* hover efek */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 25px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* =========================
-   WARNA TOMBOL
-========================= */
+/* Enhanced button colors with icons */
 .btn-absen {
-  background: #e0f2fe;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
   color: #0369a1;
+  border-color: #7dd3fc;
+}
+
+.btn-absen::after {
+  content: '📝';
 }
 
 .btn-pengurus {
-  background: #dcfce7;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
   color: #166534;
+  border-color: #86efac;
+}
+
+.btn-pengurus::after {
+  content: '👥';
 }
 
 .btn-jadwal {
-  background: #ede9fe;
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
   color: #5b21b6;
+  border-color: #c4b5fd;
+}
+
+.btn-jadwal::after {
+  content: '📅';
 }
 
 .btn-logout {
-  background: #ef4444;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
+  border: none;
+  margin-top: 8px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3);
 }
 
-/* =========================
-   ANIMASI
-========================= */
-@keyframes fadeUp {
+.btn-logout::after {
+  content: '🚪';
+}
+
+.btn-logout:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4);
+}
+
+/* Button glow effect */
+.btn {
+  position: relative;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: inherit;
+  filter: blur(12px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s;
+  border-radius: 12px;
+}
+
+.btn:hover::after {
+  opacity: 0.4;
+}
+
+/* Stagger animation for buttons */
+.menu {
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.btn:nth-child(1) { animation: slideIn 0.5s ease 0.4s both; }
+.btn:nth-child(2) { animation: slideIn 0.5s ease 0.5s both; }
+.btn:nth-child(3) { animation: slideIn 0.5s ease 0.6s both; }
+.btn:nth-child(4) { animation: slideIn 0.5s ease 0.7s both; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Subtle pulse animation on hover */
+@keyframes subtlePulse {
+  0% { transform: translateY(-4px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(-4px); }
+}
+
+.btn:hover {
+  animation: subtlePulse 2s infinite;
+}
+
+.btn-logout:hover {
+  animation: none;
+}
+
+/* Enhanced fadeUp animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive touch-up */
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 30px 25px;
+  }
+}
+
+/* Loading animation for initial load */
+@keyframes shimmerCard {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.card {
+  background-size: 200% 100%;
+  animation: shimmerCard 2s infinite linear;
+  animation-play-state: paused;
+}
+
+.card.loaded {
+  animation-play-state: running;
 }
