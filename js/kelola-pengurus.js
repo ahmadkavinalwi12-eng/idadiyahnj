@@ -18,7 +18,7 @@ function tampilkanData() {
         <td>${i + 1}</td>
         <td>${p.nama}</td>
         <td>${p.jabatan}</td>
-        <td>${p.nim}</td>
+        <td>${p.NIUP}</td>
         <td>
           <button onclick="hapus(${i})">❌</button>
         </td>
@@ -30,19 +30,19 @@ function tampilkanData() {
 function tambahPengurus() {
   const nama = document.getElementById("nama").value;
   const jabatan = document.getElementById("jabatan").value;
-  const nim = document.getElementById("nim").value;
+  const NIUP = document.getElementById("NIUP").value;
 
-  if (!nama || !jabatan || !nim) {
+  if (!nama || !jabatan || !NIUP) {
     alert("Lengkapi semua data!");
     return;
   }
 
-  pengurus.push({ nama, jabatan, nim });
+  pengurus.push({ nama, jabatan, NIUP });
   localStorage.setItem("pengurus", JSON.stringify(pengurus));
 
   document.getElementById("nama").value = "";
   document.getElementById("jabatan").value = "";
-  document.getElementById("nim").value = "";
+  document.getElementById("NIUP").value = "";
 
   tampilkanData();
 }

@@ -1,90 +1,112 @@
-  /* =========================
-       RESET
-    ========================= */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+/* =========================
+   BACKGROUND UNGU
+========================= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #5b4c9a, #402b5a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    /* =========================
-       BACKGROUND UNGU
-    ========================= */
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+/* =========================
+   CARD PUTIH BESAR
+========================= */
+.card-besar {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.3);
+}
 
-    /* =========================
-       CARD PUTIH BESAR
-    ========================= */
-    .card-besar {
-      width: 100%;
-      max-width: 500px;
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
+/* =========================
+   JUDUL
+========================= */
+.judul-card {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2d2d4a;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 12px;
+}
 
-    /* =========================
-       JUDUL
-    ========================= */
-    .judul-card {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
+.judul-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+}
 
-    /* =========================
-       MENU TOMBOL
-    ========================= */
-    .menu-jadwal {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+/* =========================
+   MENU TOMBOL
+========================= */
+.menu-jadwal {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-    .btn {
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+.btn {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 
-    /* =========================
-       WARNA TOMBOL
-    ========================= */
-    .btn-malam {
-      background: #eef1ff;
-      color: #2f3ea8;
-    }
+.btn:active {
+  transform: translateY(0);
+}
 
-    .btn-pego {
-      background: #eafff1;
-      color: #1f7a4d;
-    }
+/* =========================
+   WARNA TOMBOL
+========================= */
+.btn-malam {
+  background: linear-gradient(145deg, #f0f3ff, #e6ecfe);
+  color: #2f3ea8;
+  border: 1px solid rgba(47, 62, 168, 0.15);
+}
 
-    .btn-kbm {
-      background: #f3efff;
-      color: #5a3ea1;
-    }
+.btn-pego {
+  background: linear-gradient(145deg, #edfff1, #e2fae8);
+  color: #1f7a4d;
+  border: 1px solid rgba(31, 122, 77, 0.15);
+}
 
-    .btn-kembali {
-      background: #f1f1f1;
-      color: #333;
-    }
+.btn-kbm {
+  background: linear-gradient(145deg, #f7f2ff, #efe5ff);
+  color: #5a3ea1;
+  border: 1px solid rgba(90, 62, 161, 0.15);
+}
+
+.btn-kembali {
+  background: linear-gradient(145deg, #f8f8f8, #eeeeee);
+  color: #4a4a4a;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-top: 5px;
+}
