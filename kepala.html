@@ -2,39 +2,74 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Kepala</title>
   <link rel="stylesheet" href="css/kepala.css">
 </head>
 <body>
-<div class="center">
-<div class="card">
-  <h2>Dashboard Kepala</h2>
-  <p>Hak akses penuh</p>
+  <div class="dashboard-container">
+    <!-- Header dengan informasi user -->
+    <div class="dashboard-header">
+      <div class="header-content">
+        <h1>Dashboard Kepala</h1>
+        <div class="user-info">
+          <span class="user-badge">Kepala</span>
+          <span class="user-name">Ferdi Muzanni</span>
+           <button class="logout-btn-header" onclick="logout()" title="Logout">
+        <span class="logout-icon">🚪</span>
+        <span class="logout-text">Keluar</span>
+      </button>
+        </div>
+      </div>
+    </div>
 
-  <div class="menu">
-    <button class="btn btn-absen"
-  onclick="window.location.href='menu-absen.html'">
-  📊 Absen Pengurus
-</button>
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <!-- Welcome Card -->
+      <div class="welcome-card">
+        <div class="welcome-text">
+          <h2>Selamat Datang, Ferdi!</h2>
+          <p>Anda memiliki akses penuh untuk mengelola sistem absensi pengurus</p>
+        </div>
+        <div class="date-info">
+  <span class="date-day">Memuat tanggal...</span>
+  <span class="date-time">--:--:-- WIB</span>
+</div>
+      </div>
 
-    <button class="btn btn-pengurus" onclick="window.location.href='menu-kelolapengurus.html'">
-  👥 Kelola Pengurus
-    </button>
+<!-- Stats Cards - Akan diisi secara dinamis -->
+
+<div class="stats-grid">
+  <div class="stat-card" onclick="window.location.href='menu-kelolapengurus.html?action=tambah'">
+    <div class="stat-icon">👥</div>
+    <div class="stat-detail">
+      <span class="stat-value" id="totalPengurus">0</span>
+      <span class="stat-label">Total Pengurus</span>
+    </div>
+    <div class="add-button" title="Tambah Pengurus Baru">➕</div>
+  </div>
 
 
-    <button class="btn btn-jadwal"
-      onclick="location.href='menu-jadwal.html'">
-      📅 Kelola Jadwal
-    </button>
+  <div class="stat-card" onclick="window.location.href='menu-absen.html?action=tambah'">
+    <div class="stat-icon">✅</div>
+    <div class="stat-detail">
+      <span class="stat-value" id="hadirHariIni">0</span>
+      <span class="stat-label">Hadir Hari Ini</span>
+    </div>
+    <div class="add-button" title="Absen Hari Ini">🪶</div>
+  </div>
 
-    <button class="btn btn-logout"
-      onclick="logout()">
-      🚪 Logout
-    </button>
+
+  <div class="stat-card" onclick="window.location.href='menu-jadwal.html?action=tambah'">
+    <div class="stat-icon">📅</div>
+    <div class="stat-detail">
+      <span class="stat-value" id="totalJadwal">0</span>
+      <span class="stat-label">Jadwal Aktif</span>
+    </div>
+    <div class="add-button" title="Lihat Jadwal">👀</div>
   </div>
 </div>
-</div>
 
-<script src="js/kepala.js"></script>
+ <script src="js/kepala.js"></script>
 </body>
 </html>
